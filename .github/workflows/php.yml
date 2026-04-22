@@ -16,15 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v5
-    
-    - name: PHP version action
-      id: php-version
-      uses: antfroger/php-version-action@v1.3.2
 
     - name: Setup PHP (Minimal)
       uses: shivammathur/setup-php@v2
       with:
-        php-version: ${{ steps.php-version.outputs.latest }}
+        php-version: "8.4"
         tools: composer:v2
 
     - name: Validate composer.json and composer.lock
