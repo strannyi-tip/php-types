@@ -17,9 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v5
     
-    - name: Get PHP Versions
+    - name: PHP version action
       id: php-version
-      uses: antfroger/php-version-action@v1
+      uses: antfroger/php-version-action@v1.3.2
 
     - name: Setup PHP (Minimal)
       uses: shivammathur/setup-php@v2
