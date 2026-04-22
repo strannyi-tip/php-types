@@ -15,19 +15,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
+    
+    - name: Get PHP Versions
+      id: php-version
+      uses: antfroger/php-version-action@v1
+
+    - name: Setup PHP (Minimal)
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ steps.php-version.outputs.latest }}
+        tools: composer:v2
 
     - name: Validate composer.json and composer.lock
-      run: composer validate --strict
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      run: composer validate --strict          
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
