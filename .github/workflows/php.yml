@@ -24,6 +24,9 @@ jobs:
         extensions: ext-http
         tools: composer:v2
 
+    - name: Install dependiens
+      run: sudo apt install -y php8.4-http
+
     - name: Composer update
       run: composer update
 
