@@ -1,0 +1,27 @@
+{
+    "name": "strannyi_tip/php-types",
+    "description": "Extended PHP types",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "StrannyiTip\\PhpTypes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "strannyi-tip",
+            "email": "0x00.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "codeception/codeception": "^5.3@dev",
+        "codeception/module-phpbrowser": "*",
+        "codeception/module-asserts": "*"
+    },
+  "require": {
+    "ext-http": "*",
+    "ext-fileinfo": "*"
+  }
+}
