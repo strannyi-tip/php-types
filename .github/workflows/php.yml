@@ -24,7 +24,7 @@ jobs:
         tools: composer:v2
         
     - name: Install ext-http
-      run: sudo apt install php-http
+      run: sudo apt install php8.4-http
 
     - name: Composer update
       run: composer update
